@@ -1,3 +1,5 @@
+===  Windy City Rails ===
+
 Metrics based refactoring
 =========================
 
@@ -22,8 +24,7 @@ Rails 3.1
 ** Engine specific routes
 ** Migrations 
 
-Railsconf Random Thoughts
-=========================
+=====    Railsconf    ======
 
 How to work with legacy code
 ============================
@@ -127,6 +128,23 @@ begin
 rescue Atomic::ConcurrentUpdateError => cue
   # deal with it (retry, propagate, etc)
 end
+
+no thread safe string, array, or hash
+  do not use mutating operation
+
+define_method
+  blocks carry carry around too much state
+
+GC hidden cost of object-heavy languages
+  do not create so many objects # fewer objects == better performance
+
+Side Note that I liked
+----------------------
+Tests are tests - the red part of red, green, refactor
+  if it doesn't turn red - your tests aren't testing anything
+
+
+
 
 
 
