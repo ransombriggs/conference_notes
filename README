@@ -24,6 +24,12 @@ Rails 3.1
 ** Engine specific routes
 ** Migrations 
 
+Various WCR Notes
+=================
+
+* In many web applications, dynamic generation takes factors of less time than static pull of content, and so going nuts over optimizing the first part of the pull will only effect that small factor
+* Open source community is a marketplace
+
 =====    Railsconf    ======
 
 How to work with legacy code
