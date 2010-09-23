@@ -1,0 +1,53 @@
+Rails 3.0
+	Final beta or release candidate released today	
+
+rake test EEEEEEEEEEEEEE # taking out annoyances
+	bundler taking the gem headaches out of it
+	a bundle is a bubble
+		nothing you do not tell it to be there is there
+		system gems do not exist except as a cache
+
+ActiveRecord queries - ActiveRecord into queries
+	users = User.where(:name => 'david').limit(20)
+	users.where('age > 29') # chain - not executed
+	users.order(:name).each {|user| puts user.name} # actually run
+	Can also use this in scopes
+	scopes will override to the right - # User.only_ten.limit(5)
+
+Router
+	map.resources :people, :has_one => :avatar, :member => {:foo => :post}
+	
+	resources :people do
+		resources :avatar
+		member do
+			get :foo
+		end
+	end
+
+	pretty - but instance_evals - eww?
+
+	with_options is gone - scope is now the way
+
+ActionMailer
+	eww - instance variable hell
+	from is a hidden default
+	@foo = foo # sets partial instance variable
+	default :from => 'foo@foobar.com'
+	mail(:subject => 'foo', :to => 'foo@foobar.com')
+	easy attachments - attachments.inline['foo.gif'] = File.read('image.gif')
+
+Rails 3.1
+	public is a big mess
+	app is a beautiful place
+	move into app so you can preprocess
+		then compile it down # sprockets for javascripts
+	sprites with CSS
+		CSS is now code as well
+	flush # pass head back so browser can start pulling
+	
+
+	
+	
+	
+
+

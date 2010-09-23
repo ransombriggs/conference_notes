@@ -1,0 +1,37 @@
+Technical Debt # we will pay back at some point
+	Never gets payed back unless you talk about it
+
+smell tools
+	reek
+		reek finds code smells
+	
+	roodi
+		roodi find code / design smells
+	
+	flog
+		flog scores your code
+		higher score => worse your code is 
+	
+	flay
+		Code that flay reports as similar is a good candidate for refactoring.
+	
+	rcov
+		code coverage
+		--failure-threshold 80 # make rake fail
+		match your code coverage - you want to know when it drops
+
+fail the build if the smell tools change
+
+there is no substitute for peer review
+
+metric-fu # puts all the stuff together
+	also add saikuro
+	makes a really pretty charts
+
+churn # analyzes checkins
+	
+
+
+	
+
+

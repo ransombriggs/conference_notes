@@ -1,0 +1,33 @@
+What does the join button actually do?  Managing expectations & making startup costs cheaper
+	Will they be brought straight to the game or asked for credit card & login
+
+Priority was to make things really responsive w/ javascript
+
+Everything was going design => engineering
+
+There was no feedback to the designer - which makes the design really hard to change at a later day
+
+1) Everybody shares the codebase - designer to developers
+	They do not do photoshop to webapp translation
+
+2) Have real templates with logic
+	HAML is out - need real logic - no waterwings
+	helpers are not rendering html
+	and avoiding presenters
+
+3) Start together - designers + programmers
+	working on a domain language & app structure
+	programmer then designer makes Jeff sad
+	designer to programmer makes reworking hard
+
+Giant process screen - where is the customer feedback?
+
+Why?
+	ingights comes up while working together
+	all views are in templates with logic
+
+
+
+
+
+

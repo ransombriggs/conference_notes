@@ -1,0 +1,72 @@
+Problem with HAML
+	It is just div, div, div, div
+	Seems like everything is just div and span
+	If it is text use a p tag
+
+Learn the HTML elements - not everything is a div
+	Tables are alright - they are for tabular data
+
+Semantic html is all about hierarchy and relations
+
+Generated markup
+	div_for # do not use - creates ids and classes that are not necessary
+	use content_tag and semantic tagging
+
+Avoid html markup in your helpers
+	They should really just be returning a string
+
+Zen Coding # you can write out your CSS selector and it will output the xhtml
+
+Section 508 is about writing well formed xhtml
+
+Rounded Corners # use CSS3 - modern browsers will see it
+	the rest of the world will see boxes and be alright
+
+Presenters: Marcel molina
+	Good at encapsulation (like pagination)
+	Generic Reuse
+	Present It - state being passed into a page
+	Helpers are methods - presenters are classes
+
+### CSS tricks ###
+
+Dynamic CSS # SASS
+	Why generate?
+		you are supporting themes
+		you have an insanely large CSS set
+Sprites
+	reduce the number of calls for images
+	image_tag => image_sprite
+
+CSS Templates # derived from the print world
+	These make things not semantic
+
+Toupee # layered approach - turn on and off
+
+Jammit  # compressing and make smaller for delivery
+Startup # a list of generators - navagation - base layout
+
+Code audits
+	define a standard
+	dust me selectors (firefox) tells you what is not used
+	gem install deadweight # spider log
+
+rack-tidy # cleans up html things
+
+id & class
+	think of ids as an instance - class as a group
+
+which reset css should I be using
+	he likes eric meyer
+
+formtastic?
+
+how to get people to listen to you?
+	do it in terms of money (SEO)
+	get UI guys who aren't afraid of development
+		note - he didn't say teach developers
+		make them part of the team
+
+
+
+

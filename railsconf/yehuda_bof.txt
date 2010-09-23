@@ -1,0 +1,71 @@
+PathResolver # abstract way of doing load path
+	# any object that responds to query will work
+
+Rails.application.routes 
+	# you can now have multiple routers
+
+Astair gives you sinatry style methods in rails3 controllers
+
+class Person
+	def say(thing)
+		puts thing
+	end
+end
+
+Person.new.say('hello')
+
+class Person
+	alias old_say say
+	def say(thing)
+		old_say thing.upcase
+	end
+end
+
+### eaiser way ###
+
+module Speaker
+	def say(thing)
+		puts thing
+	end
+end
+
+class Person
+	include Speaker
+end
+
+Person.new.say('hello')
+
+module Yeller
+	def say(thing)
+		super(thing.upcase)
+	end
+end
+
+class Person
+	include Yeller
+end
+
+Person.new.say('hello')
+
+p Person.ancestors
+
+# Person is always at the bottom 
+
+you want the module to have the things you are overridding
+	the included chain doesn't alway make sense
+	module includes module - the base is the module not the class
+
+ActiveSupport::Concern # instead of doing self.included
+	extend ActiveSupport::Concern
+	included do
+
+	end
+
+if you have a module ClassMethods # will pull this automagically
+	the way people do instance methods is actually redundant
+
+extending is including on the metaclass
+
+Rails dispatch and Railtie
+
+

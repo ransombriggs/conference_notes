@@ -1,0 +1,14 @@
+Moore's law has big implications
+
+Sequence, selection, iteration
+
+The real progress has been in hardware - not in software
+
+Parallel processing is the future of Moore's law
+	Driving looking at functional languages # Scala, Erlang, Closure
+
+Structured Programming - Dijstra
+Structure and Interpretation of Computer Programs
+Clean Code 
+
+

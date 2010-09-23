@@ -1,0 +1,75 @@
+Read the vim help when curious
+Keep a cheatsheet on your desk
+	You want vim commands to be muscle memory
+	Using commands in practice to buidl muscle memory
+Have a tool sharpening list
+	Things that annoy or feel inefficient
+	Write your own macros (map Q => q)
+	Sanding down the rough edges of your environment
+Learn all the single letter commands
+	t - T - : # know what these do
+Keep your hands on the home row
+	Bind caps lock to escape
+	Don't use the arrow keys
+vimtutor - might learn something new
+
+how to get help
+	:h # help.txt
+		ctrl + ] to follow links
+		ctrl + o to get back
+
+Yank - yy # yank into the * register to get into clipboard
+
+Learn how to use registers
+	"ay # yank to register named a
+	"tp # paste from the t register
+	%   # current file
+
+Macros
+	A register that holds a series of commands - holds the keystrokes
+	qt # start recording t
+	q  # stop recording
+	@t # play back macro t
+
+Marks # like little bookmarks
+	mt # drop  a mark named t
+	't # go to a mark named t
+	mT # drop  a global mark
+	`T # go accross files
+
+Text states
+	vim handles undows as a tree
+	undo / redo just goes up the most recent treee
+	g- # depth first search on the undo tree
+	g+
+	:earlier / :later
+	
+mapleader to add shortcuts
+	let mapleader = ','
+	map <Leader>h :FuzzyFinderTextMate # ,h
+
+movement
+	41G # go to line 41
+	H   # high (in buffer)
+	L   # low  (in buffer)
+
+inside and around text motions
+	b   # back to beginning of work
+	caw # change around word
+	ca( # change around the delimiter
+	ci( # change inside parens
+
+ctrl-s  # to :w
+
+tags # exuberant ctags
+	an index of where everything is
+
+:Rmigration # last migration written
+:Rake       # run the migration / test
+
+r00k/talk_notes
+
+
+
+
+

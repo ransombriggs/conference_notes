@@ -1,0 +1,50 @@
+SQLite3-Ruby
+
+AR::Base => ConnectionPool => Hands back DB Adapter
+
+Why prepare a statement?
+	Prepared statements can be cached
+	Can improve database performance
+
+Rails Caveats
+	User.find(10) => select * from users where id = ?
+	This is not prepared at all
+		It connection.executes after substitution
+
+You can add hooks into the sqlite engine to provide your
+	__END__ + DATA # anything after __END__ is data filestream
+	creepy - but kinda fun
+
+What's new in SQLite3-Ruby?
+	Way way faster (1.3)
+
+ERB
+	Can have multiple handler - responds_to render and resolve
+	You can actually look at the compiled template (.src)
+
+ERB Memory Footprint
+	IO Input  => mmap - C function that maps file handle as a chunk of memory
+	erb takes forever reading file into string that goes in to ERB.new
+	IO Output => pass something that responds to concat
+	makes a lower memory footprint
+
+Rack
+	Handler#call(env) => [response, header_hash, string_body]
+	runs.each on the final param & then runs close - we can pass file handle
+	Template caching - only slightly faster
+	Leverage the each method on body
+		Opens two ends of the pipe (write for the erb / read for rack)
+
+YAML
+	Syck => Psych
+	encode_with & init_with (with a coder object whom we tell how to represent)
+	Could even use with XML / HTML
+
+Twitter Stream
+	Little rack app using IO pipes
+
+	
+
+
+
+

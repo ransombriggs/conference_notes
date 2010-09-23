@@ -1,0 +1,34 @@
+Creativity and constraint
+	Constraints are liberating # costume party got better with themes
+		Twitter is constrained to 140 characters, etc.
+	Counter-example - Dreaming in Code
+		also java programming with explicit declarations
+	How much is not too much (Zen and the Art of Motorcycle Maintenance)
+
+Painting
+	Used to be about representation
+	Then the camera was invented
+	Opened the artist up to interpretation
+
+Our camera is the Java enterprise boringness
+	Opens up ruby to interpretation
+	Is software development a craft or an art?
+
+Composability
+
+Conciseness or non-obfuscating density
+
+---
+
+Expertise or virtuousity
+Nonutilitarian pleasure
+Styles and how they change
+Cricism
+Imitation
+Special focus
+
+
+		
+		
+
+

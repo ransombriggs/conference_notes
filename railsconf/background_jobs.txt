@@ -1,0 +1,52 @@
+Resque && Redis
+
+Redis
+	memcache on drug reference
+	key => value store for data structures
+	value can be an a number of objects
+	persistent to an extent (flushes periodically)
+	prior to 2.0 - everything had to fit in RAM
+	after 2.0 - if values are too big still a problem
+
+Uses at github
+	used as a router to your repository
+	determine how loaded each server is
+
+Unicorn uses UNIX
+	Loads the entire stack and forks
+	All children read from a socket the parent owns
+
+Delayed Job # background processing system? a queue system?
+	Big innovation was a rake task that runs forever
+	How to manage bad workers, slow workers, etc
+	Responds to perform with args
+	You can use arbitrary object (serialized with yaml)
+		Runs into problems with stale data
+		Should be passing id instead
+
+Needs to be fast and atomic
+	Needs to have transparency - what jobs exist?
+	
+Rescue 
+	Serializes job using json - class and args
+	DelayedJob and Beanstalk can use priorities # too granular
+	Uses lists to store the queue
+	Spin up workers with a list of queue names
+		runs through queues in order (empty the first before the second)
+		Advertises to resque that I am here
+	On the master there are critical, high, low queues
+		Control which machine the job is getting run on
+	Grab a job - fork - run the job
+		This lets them respond to signals
+		They can still talk to the forker
+	resque advertises its state using $ (whatever shows up in ps aux)
+	what to do with exceptions - can we send these somewhere?
+		there is a sinatra app for failure UI
+	
+	
+
+
+
+	
+
+

@@ -1,0 +1,32 @@
+repay your debt
+
+Making a gem (calling it filt)
+	filt.gemspec
+		Gem::Specificiation ...
+	gem build filt.gemspec
+	gem push filt-1.0.1.gem
+
+What is a product?
+	One that offers utility or aesthetic value
+
+Agile
+	Do the bare minimum to get something delivered ???
+
+What does delivered mean?
+	Usable, extensible, and tested
+
+What does the criteria look like for the open source world?
+
+Two reasons
+	To share
+		has utility & practical
+	To learn
+		no requirements & should it be posted publicly?
+
+Use testing as a design verification tool
+
+
+	
+
+
+

@@ -1,0 +1,58 @@
+threading - 3 tips - don't - do not share state - do not share mutable state
+
+operator assignment is not atomic
+	+=
+	||=
+
+use Mutex
+
+gem install atomic
+	atomic updates - create new atomic instance
+	keeps trying until it can update
+
+autoload is broken for threading
+
+aren't mutexes slow? # not really and cheaper than confusion
+
+no thread safe string, array, or hash
+	do not use mutating operations - ooo freeze
+
+define_method
+	blocks carry carry around too much state
+	do a def inside a method body (so long as you do not need state)
+	use an instance variable that you set before the define_method
+
+memoization # calculate once - use forever
+	metaprogramming makes things hairy
+	ObjectSpace._id2ref(#{id}) # treat the whole process like a big hashtable
+		only sorta works on a non-moving GC - moves? - you are shit out of luck
+		every id2ref is a time bomb - GC will get you
+		it is slow - it searches the entire heap
+	def return...
+		@@vals[name] = any
+		eval <<-CODE
+			@@vals[#{name}]
+		CODE
+	end
+
+	every memoized object is a memory leak - how long is forever
+
+GC hidden cost of object-heavy languages
+	know your implementations - they differ
+	do not create so many objects
+		fewer objects == better performance
+		use mutation in place ! operations, etc - but threading problems
+		when working with local state - threading is not as much of a problem
+	GC.start # in most cases it does not help
+		usually impacts performance more than helping
+	Generational garbage collection is way cooler - don't scan code all the time
+
+assert and friends
+	def assert(boolean, message = nil)
+	there was a raise on the message not being a string
+	Tests are tests - the red part of red, green, refactor
+		if it doesn't turn red - your tests aren't testing anything
+	
+	
+
+

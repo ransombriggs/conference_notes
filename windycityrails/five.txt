@@ -1,0 +1,71 @@
+Rails2
+	ActiveRecord && ActionPack && Railtie # pretty damned coupled
+
+Rails3
+	Railtie has gotten smaller - just specializes how apps engines, etc work
+
+Railties - hooks
+	if defined? # is a smell - depends on load
+
+module MyORM
+	class Railtie < Rails::RailTie
+		config.generators.orm :my_orm
+		rake_tasks do
+			load 'my_orm/database.rake'
+		end
+
+		config.before_configruation do |app|
+
+		end
+		# to_prepare - nice - can do something once in prod, all the time in dev
+	end
+end
+
+ActiveSupport.on_load(:action_controller) do
+	include MyPlugin::ControllerStuff
+end
+
+# Adding instrumentation
+
+Upgrading
+	# install rails 2.3.9 # deprecation & bridge
+	# install bundler
+	# install rails_xss   # look for helpers making html # form building # just using taint does not work
+	                      # make sure we are using content helpers 
+	# look @ deprecations log in test
+	# upgrade!
+	# look @ deprecations again # most obvious is config changes
+
+Rails 3.1
+	Engines @drogus
+		migrations it copies & renumbers
+		static assets (w/o copying)
+		self contained engines
+		want to feel like it is in a rails app
+			mount Blog::Engine => '/blog', :as => 'my_blog'
+			my_blog.posts_path	
+
+HTTP
+	Page Caching          # hard coded to files currently
+	Built in HTTP caching # fresh_when # when some ruby object
+	Rack::Cache           # now part of rails
+
+Assets
+	ERB == SCSS # can put CSS alongside the views
+	posts/index.css.scss # nice - we have gobs of stuffs
+
+Spriting API
+	images/sprites/sprite_name/img{1,2,3}.png
+
+Autoflush
+	Sends to browser as soon as possible
+
+Exceptron # a plugin right now
+	Actually audit the exception properly
+	
+3.1 is also a performance release
+	@tenderlove is rewriting arel
+
+
+
+

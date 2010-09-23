@@ -1,0 +1,49 @@
+It is hard to bring in people to a giant monolith
+	Linked and seamless # users do no see the difference
+
+Basic features of each app
+	Seperate database
+	Runs independently # complete story
+	Lightweight - a single developer can work on one
+	Tight internal cohesion and loose external coupling
+
+Advantages
+	Independent development cycle
+	Developer autonomy
+	Technology (im)maturity safety
+		Will be able to test new functionality
+		Without breaking the entire application
+
+Appeal to developer laziness
+	If it is easy to do it one way - people will
+
+Consistent UI
+	Shared CSS / JS styleguide
+	Common helpers in shared gem
+
+Development lifecycle
+	Implement new view code / plugin into a seperate application
+	Package everything up into gems
+
+Sharing data
+	"Read Only" database connections
+	Web services
+	AJAX loaded partials
+
+Tried SVN externals of models
+
+Start breaking up users stores into the CRUD and the readonly models
+
+Use web services for multiple writers
+
+Features of user services
+
+Uses a single session store between all database servers
+
+Load each rails app into a subdir then use unicorn
+	Use rewriter to map the different subdomains
+
+acts_as_readonly # grabs config from central server to find database
+
+
+

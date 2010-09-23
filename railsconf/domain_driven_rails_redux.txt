@@ -1,0 +1,58 @@
+Taking your big system and how do your organize it better
+
+Were using solr to track anytime someone makes a change in an event was updating index
+	Had a problem when the search server went down - caused people to pay and not complete
+
+Software is a learning process - you will never be able to just sit down and code
+	Design actually matters - watch for the complexity in the system
+	All complexity is not created equal
+		There is an eventual barrier to complexity simplicity enherent in the business
+			I need to do ____   because the biz needs  ____
+			The nugget of ugliness
+		There is programmer introduced complexity (accidental)
+			I need to do ____ because the *code* needs ____ # rethink
+			This is not inherent to the problem - coding into submission
+		The 5 whys - go back five times => should diverge to reduce risk or make $
+
+What's next? dealing with system with 150 models
+	Understanding the business context - the core domain - if we did not do this - we would not exist
+	Ubiquitous language - there will be domain experts - using terms from the domain
+		These should be used in discussions and translate into the code
+	Conway's law - software structure reflects the communications structure of the organization that built it
+
+How does your business work?  Start using as the boundries to your code
+	Answer yes / no questions with 'What if?' - what if we run out of widgets?
+	Don't solve business problems with technical solutions
+		There are trade-offs to be made with what to code - what to handle in business process
+
+Use better method names - we start running into problems balancing having too many methods 
+	&& having chainable ones that we use
+
+Bounded Contexts
+	Models exist in a context - people expect different things from models based on role
+	Start to think of things in smaller logical groups - take the giant railroad diagram
+	module Willcall # will lookup willcall user first
+		class User < ::User
+			default_scope :order => 'foo, bar'
+		end
+	end
+	Big problem here with has_many and .klass (would allocate a User)
+
+Pull things into gems
+Rails3 engines / mountable applications
+
+Bounded contexts should have loose coupling - I should be able to process payment while posting to search server
+	I want a communication between the bounded contexts - so that we do not care about internals
+	Want communications to be between contexts - not models
+	Acheive this by using well defined interfaces
+	Big fans of using events to communicates
+		Uses models with classes using the same event handler method
+		This is good because I define how I handle events & rollback
+
+
+Connascence of Meaning ?
+
+connascence - buh?	
+
+
+

@@ -1,0 +1,90 @@
+It's not cucumbers fault that it is slow
+	It's your code that is slow (probably true)
+
+Starting out
+	A couple of tests - the suite takes a minute
+	Next thing you know it is a one our build
+
+Slow testing problems
+	Running full build versus running subsets
+
+Two types of feedback
+	Development feedback loop
+		Speed is the most important thing
+		Confidence is sacrificed
+	Test build
+		Speed can be sacrificed
+		Confidence is tantamount
+
+Happiness is a ten minute build time
+	Slow builds are the enemy of continuous integration
+
+Spork
+	spork cucumber && cucumber --drb
+	Spork.prefork && Spork.each_run
+
+Slow services
+	When we add solr - backend - extra cruft
+	tag scenarios that need them with @foo
+	do not start services unless feature is tagged
+
+autotest
+	uses file conventions to guess which test should be rerun
+	with cucumber that is a much harder problem - we touch a lot
+
+cucover
+	uses code coverage to associate test lines to features
+
+Slicing through features
+	tags - filenames with globs and profiles
+
+Just enough database
+	A lot of same stuff is generated over and over again
+	Saves execution tree so that it doesn't re-exec
+
+Test build feedback
+	Throwing hard at the hardware
+	Intelligent test selection
+	Tighter focused tests # excerise tighter slices
+	Divide and conquor the system into smaller subsystems
+
+Testjour
+	Distribute the queue over multiple machines
+	Runes redis work queue and the slave pulls the feature
+
+slim-sumo
+	using disk image it launches EC2 nodes
+
+Hydra # does more than just cucumber
+
+Failure probability matters
+	Can we reduce the set to just those that fail?
+	
+Flickering confidence
+	When builds intermittently fail
+	Only run the flickers
+
+Split up by engines (are these isolated enough to seperate)
+	Split up into services and let the testing split
+	Reinforce the interface with unit tests
+
+Combinatorial testing sets
+	gem install pairwise
+	gives table to put in your feature
+
+Oh no - javascript!
+	celerity / watir / celenium
+
+capybara  => replacement to webrat
+	drivers can be swapped out
+	need capybara-envjs for driver
+
+javascript
+	envjs => johnson => spidermonkey
+
+Find your correct compromise
+	Slow test build => slow release cycle
+
+Your test builds are a goldmine of data
+
+

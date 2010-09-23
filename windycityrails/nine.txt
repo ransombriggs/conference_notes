@@ -1,0 +1,29 @@
+Metrics based refactoring
+
+gem install metric_fu
+rake metrics:all
+
+Now What?
+	Flay	# structural duplication
+	Churn	# takes source control
+			# identify those that change a lot
+	RCov	# make sure your coverage is good where it needs to be
+			# do not solidify bugs in tests
+			# write tests while you learn code
+	Flog & Saikuro - complexity measurement # number of paths
+			# paths vs assigns branches & calls
+	Reek, Roodi, RailsBest # look for design problems
+
+Continuous Integration
+	MetricFu generates an html and yaml
+	Do not fail the build on code metrics
+
+Trends over time
+	Are we actually making things better?
+
+Coming Soonish?
+	Combining multiple metrics to identify worst spots
+	
+
+
+

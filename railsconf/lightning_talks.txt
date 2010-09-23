@@ -1,0 +1,19 @@
+client_side_validations
+	validations come in through json
+	validations_to_json
+	http://github.com/dnclabs/client_side_validations_examples
+	form_for(@book, :validations => { :url => new_book_path(:format => :json) })
+
+what's new in rspec-2 # old rspec will not work in rails2
+	rspec spec
+	module RSpec instead of Spec
+	rspec-rails dpends on rspec
+	you can filter to just run specific examples
+
+surveyor - survey in your rails app
+	the DSL needs a little work
+
+bit.ly/RwandaOnRails
+
+
+

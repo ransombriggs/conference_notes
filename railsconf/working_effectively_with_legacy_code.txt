@@ -1,0 +1,47 @@
+Do you think you write good code?
+	How do you know that you know?
+		What does good code look like? # and do we agree?
+
+Expert vs novice code
+	experts don't need small methods
+	the expert has a mental map already
+		expert in application knows how things tie together
+		we start coding for others - then code for ourselves
+			on no - cruft!
+
+Design and coding principles
+	big ball of mud # code that degrades to a shantytown
+	there is a reason we keep doing these things
+
+Forgoing the Toupee # entropy wins in the long run
+	Tests really help allowing you to make change
+		This is not every place in your codebase
+		Test around your hotspots
+		Look at your commit history
+		Do bug fixes cause more bug fixes?
+
+3 Experiments
+	Find the most executed paths of your code
+		These should be cleanest and tested
+	Play Open / Closed Whack-a-mole
+		Good code is open to extension but closed to modification
+	Run dojo experiments
+		take the same piece of code and throw it at 30 developers
+		run again - how do they change the code
+		how do we react when confronted with code
+		how does the way we structure frame how people react
+
+Research your repository
+	When a bug is found - what is written first? the test or the fix?
+
+Left his big method alone
+	Did not know how to refactor for one
+	He trusted the other developers, the next person can understand
+		Next delta it will be changed - no delta - no worries
+
+Bertran Meyer
+	
+		
+
+
+

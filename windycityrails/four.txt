@@ -1,0 +1,24 @@
+Culture
+	Rails Maturity Models # RMM is dead 
+
+Cargo Culting
+	John Frum Cult # imitating cargo planes
+	RMM just took the artifacts - easy to parrot - hard to succeed
+
+No micro-management
+No penny-pinch
+No death marches
+No meetings * (except daily stand up)
+No hierarchy
+No future proofing (keep the future out)
+
+Process is an embedded reaction to prior stupidity
+
+Forced heroics do not work - (let's stop pairing and writing tests!)
+	Candidate goes with multiple teams
+	Then they actually pair with the interviewee
+
+How do we decide who to hire
+	If it is not hell yeah - then it is a no
+
+

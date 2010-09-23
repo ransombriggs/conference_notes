@@ -1,0 +1,84 @@
+Cleaning up your domain objects
+	you can cherry pick the functionality you want
+
+require 'active_support/cache'
+class User
+	def friends
+		cache.fetch('user-#{name}-friends') do 
+			%{ Peter Egon Winston }
+		end
+	end
+	private
+	def cache
+		ActiveSupport::Cache::MemCacheStore.new
+	end
+end
+
+### refactor ###
+
+cache_key(:friends, :friends_key) do
+	%{ Peter Egon Winston }
+end
+
+def friends_key
+	'user-#{name}-friends'
+end
+
+### enter Concern ###
+
+module Cachebilly
+	extend ActiveSupport::Concern
+	included do
+		# do class extensions
+	end
+end
+
+accessors + concerns == slimming effect
+
+How to make plain ruby objects look good
+	include ActiveModel::Validations
+
+class GhostbusterValidator < ActiveModel::Validator
+	def validate(record)
+		# do error stuff
+	end
+end
+
+class User
+	validates_with GhostbusterValidator
+end
+
+Serialize your objects - your way
+	{.to_json, .to_xml} && {.from_json, .from_xml}
+	attributes        # returns hash of what we want to serialize
+	attributes=(hash) # from_xml
+	include ActiveModel::Serializers::XML
+
+ActiveRelation # does relational algebras
+	include Arel::Relation # where order take skip insert update delete
+	cattr_accessor :engine # thing that actually talks to the datastore
+
+class AR # showing how AR using Arel
+	include Arel::Relation
+
+	def save
+		insert(self)
+	end
+end
+
+class UserEngine
+	attr_reader :cache
+	def initialize(cache)
+		self.cache = cache
+	end
+
+	def create(insert)
+
+	end
+ 
+end
+
+Arel::InMemory
+
+
+

@@ -1,0 +1,61 @@
+Performance
+	early planning is *not* premature optimization
+		make changes that do not yield value is the point of knuth
+	if you cannot measure it - you cannot improve it
+
+measure
+	understand the tools at each layer to measure performance
+	performance / latency -> how long does it take
+	throughput            -> number of stuff we can do per x
+	scalability is how can we tweak these while adding workers
+
+The static pull is where most of the time is actually spent
+	less than 20 percent of the time is actually spent on dynamic html generation
+
+Tools
+	Yslow
+	Google page speed # shows you paint events
+
+Really only think about performance after you have a way to measure
+
+CSS and uncompressed files will make you sad
+	GZip is the smallest && smartest
+	Cookie-less domains will help to cut down on transmission and thinking
+	Sprites and minification
+
+Expires & browser caching
+	Query string changes help manage the cache
+
+Rails Caching
+	Page & Action & Fragment Caching
+
+Profiling Tools
+	request-log-analyzer
+	rack::bug - instrumentation at the rack level
+		you will not always see your ajax stuff
+	rails metrcis
+
+Paid
+	scout & new relic
+
+Pounding the page testing
+	ab # apache bench
+	httperf
+	jmeter
+
+Database issues
+	Lazy loading
+	Not utilizing explain
+	Inadequate indexes	
+	Selecting too much
+
+Rails indexies (foreign key indexes)
+ambitious query indexer
+
+slim_scrooge # instrucments your code & observes 
+
+Aman Gupta & Joe Damato
+
+
+
+

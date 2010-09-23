@@ -1,0 +1,40 @@
+Ruby is slow ... and loves eating lots of RAM
+
+Garbage collector is conservative
+	Everything looks like a pointer and must be considered as such
+
+Garbage collector is stop the world
+	Nothing else can happen till mark & sweep is done
+
+Improve performance
+	Have less objects - remove unessessary object allocations
+	avoid leaked references
+
+useful tools
+	ltrace - can trace GC - mysql and more
+	GC tuning - with REE
+		gc_malloc_limit   - every time gc_malloc_limit is allocated - GC runs (8MB => 60)
+		heap_min_slots    - number of slots that the free list starts with    (10k => 500k)
+		heap_slots_growth - how much to reallocate (creates massive slabs)    (1.8 => 1)
+	ObjectSpace.each_object
+	gdb.rb (for EE)
+		attach to a running REE process and inspect the heap
+		helpful for fixing a leak (example of there being a class leaking objects)
+	bleak_house - installs a custom patched ruby
+		tells you what is leaking and where the leak is coming from
+	memprof
+		goals: easy to use - wanted references between objects
+		rewrites your ruby binary in memory (creepy)
+		Memprof.track (pass a block)
+		Memprof.dump  (see what the deal is - nice object dump with instance variables)
+		Memprof.dump_all (get the whole heap)
+		Memprof.com   # pretty interface to the nasty output
+
+Memprof::Tracer
+	Use as a middleware - tracks # queries, etc
+
+remember that procs have all the locals at the time - check to find leaks
+	
+		
+
+

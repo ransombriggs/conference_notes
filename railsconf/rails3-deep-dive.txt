@@ -1,0 +1,43 @@
+Rack
+	Middleware
+		can be thought as filters for requests
+		use MiddleWare # has access to env
+		can chain these together to filter
+		look at config.middleware to put filters in
+		many plugins are done through middlewares
+	Can match using routes
+		ie: class Hello < Sinatra::Base
+		match '/foo', :to => Hello
+
+Replaced subclassing with modules
+	ActiveSupport::Concern # set of tools for common module inclusion pattern
+	Includes or extends Instace / Class Methods automatically
+
+method_compilation vs method_missing
+
+Plugin stuff
+	Railties gives you access to your load process without hacks
+	railtie_name => sets up your config
+	define initializers && add rake tasks - do the loads
+	
+Engines
+	Becoming first class citizens
+	Total access to app.config
+	Patch in middlewares & load paths etc
+	Engine would clean up our app autoloading garbage
+	http://rails-engines.org/
+
+Generators
+	Rails::Generators::Base
+	all public methods are tasks
+	you can build generators that build from others
+	new and improved hooks - like testing hooks
+	easier to require parameters
+
+
+
+
+
+	
+
+

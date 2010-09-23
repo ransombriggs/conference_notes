@@ -1,0 +1,146 @@
+Cucumber - convergence between BDD movement and DSL movement
+
+Cucumber is alway trying to help you walk through step by step
+
+Think of a step definition like a method definition
+
+Failure tells us what to fix - we don't have farmer class yet!
+
+You should only add to app when you have a failing step
+  - if really forces the idea of BDD
+
+Gherkin - name of the Given / When / Then
+
+Cucumber features
+	Examples help to dry up the features
+	Step strings - """ right beneath the step - comes in as last arg
+	Cucumber tables
+	Background - allows you to create a given (same as before or setup)
+	Tags - then you can pass -t to run the specific feature sets
+		you can also pass ~@tag to run those that do not have that tag
+		People use to denote works in progress or slow stuff
+	Hooks - Before & After - does not make sense for domain - just tech stuff I have to do
+	Around hooks - sticks the scenario inside a block
+	Tagged hooks - Before('@foo') # run only for the @foo tag
+
+Feature
+	How does this add business value?
+		Who is the person using the system
+		Thing that we doing
+		How are we adding business value?
+
+Rails generators are slightly different
+	./script/rails g controller Cards	
+	Note: testing framework agnostic - generate rspec
+
+Group you step definitions by domain definition (models)
+	When multiple models - put with dominant one
+
+Cucumber workflow
+	path (could not find path)
+	route (could not find method)
+	cards controller (could not find controller)
+	template touching (could not find view)
+	added form_for for @card to add Title (could not find field)
+	undefined model-name for nil (used @card in view)
+	jumps into rspec to describe the Controller
+		get :new ; assigns(:card).should be_a_new(Card) # not right but close
+		post :create ; response.should redirect_to
+		think of as writing unit test (does not touch db)
+	generate the model (to fix the Card constant missing)
+		at this point we could run per change - but painful
+	finished up the new method (ooo - Title fill passed)
+	adds the button (could not find the Create button)
+	adds the action (could not find create action)
+	adds the index  (could not find index template)
+	adds the step defintion for should see (missing step)
+	adds view for the the cards (could not see anything)
+	adds controller action (@cards.nil)
+	forgot to actually create card (just redirected)
+
+Cucumber tables
+	.raw, .rows, .hashes
+
+Capybara - like webrat but newer
+	lets you talk to the dom
+    can combine with chrome
+
+--format pretty
+
+--- after break ---
+
+acceptance test
+	once this test passes the code is accepted
+	we agree on the contract before we do the work
+	customer tests in cucumber
+	developer tests in rspec / other frameworks
+	cucumber tests that we wrote the right code
+	unit testing tools tests that the code is right
+
+test
+	don't call them tests
+	it is a specification - documentation and regression
+
+team structure
+	someone from QA may actually be able to write the cukes
+	sometimes it is developer to customer for approval
+
+imperative style
+	One example where it was very explicit
+		too much detail
+	One example where the step defintion stuffed
+		no detail
+	Another one where the step defintions were nested
+
+Database Cleaner
+	:truncation => for in-browser scenarios
+		does every table in the system
+	:transaction => for in-memory scenarios
+
+Factories
+	Cucumber should not be mocking - actually go to DB
+	Factory is about creating data
+
+Stubs - for when you want to run on a train
+	Network Services
+	Fakeweb - where I should go / get
+	File System - Fakefs
+		avoids the deletion mess ups
+	Time - Timecop - freezing time
+		messes with performance metrics
+		another approach is to add Clock model
+	NO message expectations 
+		looks for how one thing interacts
+		it says it has to honor some protocol
+		way way too granular
+	For protocol - they look at the line (JUnit recipies)
+
+Cucumber & rspec are tested in cucumber & rspec
+TDD - you should test anything that could break
+	
+
+
+--- side conversations ---
+cucumber && rspec
+	some do only cucumber -> both -> just rspec
+	he tends to write cucumber
+	he writes rspec when he feels like he will do something complicated
+	if you were rigorous - you would write specs before every method
+	rspec is much faster than cucumber - tight feedback loop
+
+testing errors
+	guy recommended only testing one error class
+	capybara & selenium work pretty well with waits
+
+Example groups with the one extra bit
+	Use another field in the example to trip that extra bit 
+
+Capybara
+	@javascript tag makes it fire off a webrick and run
+	Before('@javascript') do
+		@javascript = true
+	end
+	Then in code does foo if @javascript
+	card_widget = page.driver.find
+	card_widget.drag_to
+

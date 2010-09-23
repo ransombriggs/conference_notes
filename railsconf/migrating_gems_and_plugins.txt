@@ -1,0 +1,53 @@
+railsplugins.org
+
+Look at formtastic
+
+Resources for upgrading
+	railsupgradehandbook.com
+	railsdispatch.com
+
+First - the easy stuff
+	Rake tasks
+		Lots of deprecations
+		Put tasks in lib/tasks # no longer in tasks
+		Rake tasks can now be moved into a Railtie
+	Generators
+		generators => lib/generators
+		Rubigen => Thor
+		Rails::Generators::Base => Rails::Generator::Base
+		Look at Thor documentation
+	RAILS_*
+		All these are deprecated - just annoying
+		Rails.{env,root,logger}
+	Hooking into rails
+		Rails2
+			ActionView::Base.send(:include, Foo)
+		Rails3
+			ActiveSupport.before_{foo}(:active_record) { include Foo }
+	gemify
+		Works really well with bundler
+		jeweler
+
+That was the easy stuff # Guess, blood, and hacks
+	rails_footnotes
+
+clean_backtrace => ActiveSupport::BacktraceCleaner
+	rails_footnotes alias_method_chains clean_backtrace
+	found add_filter in BacktraceCleaner
+	we have to make sure that we don't call establish_connection until after_initialize
+		had a problem where ActiveRecord::Base was not fully loaded
+	depending on instance variable existance - eww
+	then ran into a reference problem
+		.body changed from string => array
+	callbacks have been moved to ActiveSupport::Callbacks
+
+_foo methods had to be called a lot - hint you should not be in here
+
+Engines
+	Way easier to do in rails3 - with RailTie system
+	Being able to draw in routes, etc
+	Plugin with an app directory vs an engine
+	Engine is a reusable mini app slice
+
+
+

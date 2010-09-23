@@ -1,0 +1,58 @@
+work => test => commit # what we are shooting for
+
+work 30 => test 30 # does not work
+
+Used emptyDB # you build up the objects - everything you need
+
+Started at 13:15
+
+Fast context # this is should specific
+	Must have side effect free assertions (cannot modify state in the should)
+
+Down to 5:32
+
+Second is paperclip specific
+
+Down to 3:34
+
+Amand Gupta # profiling tools
+
+Multicore testing
+	parallel_tests # locally
+	tickle         # Test::Unit
+	deep-test      # sockets, multiple databases, w/ daemons
+	specjour       # rspec w/ bonjour && daemon
+
+pre-group files # department test will make you sad and will imbalance
+	tickle, parallel_tests, specjour
+
+hydra
+	active balancing
+	learns from your test suite to balance
+	no daemons to run & no multiple databases
+
+workers are forked after 
+	need transactional test
+	need independent test # filesystem problems
+
+Down to 1:26 # 2.5 times faster
+
+tuning ext4 - writing through faster # with less confidence - fine for test partition
+	atime is a sadness - noatime     # will make your mutt client sad
+
+ruby enterprise edition
+	tweak the allocation pass configurations
+
+Down to 0:18
+
+Distributed hydra # ssh messaging system - using pipes
+
+What about deadlock spinning
+	Added way to chain tasks for slow ones
+
+Biggest bang - REE + filesystem configuration # does not break the build
+	Profile your own application - see what is actually slow
+	Concurrent testing - most difficult
+
+
+
