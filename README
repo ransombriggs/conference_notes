@@ -2,4 +2,113 @@ Metrics based refactoring
 =========================
 
 
+Railsconf Random Thoughts
+=========================
+
+How to work with legacy code
+============================
+
+Tests really help allowing you to make change
+  This is not every place in your codebase
+  Test around your hotspots
+  Look at your commit history
+  Do bug fixes cause more bug fixes?
+
+3 Experiments
+    Find the most executed paths of your code
+        These should be cleanest and tested
+    Play Open / Closed Whack-a-mole
+        Good code is open to extension but closed to modification
+    Run dojo experiments
+        take the same piece of code and throw it at 30 developers
+        run again - how do they change the code
+        how do we react when confronted with code
+        how does the way we structure frame how people react
+
+Yehuda After Hours
+==================
+
+Hey you - you're overriding behavior incorrectly
+------------------------------------------------
+
+class Person
+    def say(thing)
+        puts thing
+    end
+end
+
+Person.new.say('hello')
+
+class Person
+    alias old_say say
+    def say(thing)
+        old_say thing.upcase
+    end
+end
+
+### easier way ###
+
+module Speaker
+    def say(thing)
+        puts thing
+    end
+end
+
+class Person
+    include Speaker
+end
+
+Person.new.say('hello')
+
+module Yeller
+    def say(thing)
+        super(thing.upcase)
+    end
+end
+
+class Person
+    include Yeller
+end
+
+Person.new.say('hello')
+
+ActiveSupport::Concern
+----------------------
+
+ActiveSupport::Concern # instead of doing self.included
+                       # will pull in ClassMethods automagically
+
+module MyFeature
+  extend ActiveSupport::Concern
+  included do
+
+  end
+end
+
+Deep and dirty in Rails
+=======================
+
+Things to know when trying to share state w/ threads
+----------------------------------------------------
+
+threading - 3 tips - don't - do not share state - do not share mutable state
+
+operator assignment is not atomic
+    +=
+    ||=
+
+
+gem install atomic # an Atomic class that guarantees atomic updates to its contained value
+
+my_atomic = Atomic.new(0)
+my_atomic.update {|v| v + 1}
+begin
+  my_atomic.try_update {|v| v + 1}
+rescue Atomic::ConcurrentUpdateError => cue
+  # deal with it (retry, propagate, etc)
+end
+
+
+
+
 
