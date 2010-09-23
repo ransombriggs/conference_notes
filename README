@@ -1,5 +1,23 @@
 Metrics based refactoring
 =========================
 
+metric_fu - Jake Scruggs
+http://github.com/jscruggs/metric_fu
 
+* Flog - code complexity
+** http://ruby.sadi.st/Flog.html
+* Saikuro - cyclomatic complexity
+** http://saikuro.rubyforge.org 
+* Reek - bad design detector
+** http://github.com/kevinrutherford/reek
 
+Rails 3.1
+=========
+
+* Rails 2.3.9 - deprecation notices for upgrading
+
+* Engines
+** http://piotrsarnacki.com/2010/09/14/mountable-engines/
+** Namespacing
+** Engine specific routes
+** Migrations 
