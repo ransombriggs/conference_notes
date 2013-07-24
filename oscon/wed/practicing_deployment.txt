@@ -1,0 +1,162 @@
+Recognize where you are and where you want to be
+
+Capability Maturity Model
+=========================
+
+1. Initial: chaotic, individual heroics
+    Startup phase of many projects
+    Push code whenever you feel like it
+    Developers push code w/o a lot of verification
+
+2. Repeatable: documented
+    Once you have users you want a process
+    Push when a feature is done, less often than initially
+
+3. Defined: standard process, some tuning
+    Procedural documentation - when you hire your first ops person
+    Might have automated part of the deploy process
+
+4. Managed: measured
+    Automation w/ some packaging tool and an automated verification
+    Measurement: how often, how long, how does new release perform?
+
+5. Optimizing: continuous improvement
+    Take the drama out of deployment
+    Really lightweight, just push and it is done
+
+How much do we ship at a time
+    At beginning is push per change
+    Then to features
+    Then to releases - happens w/ first product person
+    Then back to per features
+    Then back to per patch
+
+Velocity models
+    Frequency of a release
+    Critical mass
+        Enough stuff to release
+        smallest quantum of change that has value
+    Single hard deadlines
+        Support for X by date Y
+        Hard deadlines are hard
+    Train model
+        Release every wednesday
+        Good psychological for people
+            They know it is coming and will get the next one
+    Continuous deployment
+        Ship each change as soon as it is done
+
+Tools and practices
+===================
+
+Source control
+    Stable vs unstable
+    Branch per bug and branch per feature
+    "git flow" is overkill but you need a process
+    If it is not per-patch-push, tag what you push
+    Open source needs Extended support releases
+
+Developer environment
+    Dev laptops is a horrible environment
+    VMs can be hard to maintain
+    Development databases are hard: getting data is hard
+    Development API setup with the fakedata
+    Lightweight set up and tear down VMs
+    "Development" staging server
+    "Try" server for branches
+
+Staging
+    Staging must reflect production
+    Same versions, same proportions
+    Realistic traffic and load
+    Must be monitored
+    Must have managed configuration
+
+One Box Fail
+    Staging needs to be more than one box
+    If you have multiple database or webheads
+
+Continuous Integration
+    Build on commit
+    VM-per-build
+    Pull request automation is great
+    Auto push build to staging, then run more tests
+
+Testing
+    Unit tests: run locally, run on build
+        Know what your code coverage means
+    Acceptance tests: run against browswer
+    Load test: how does it perform under prod load
+    Smoke test: what is the maximum load we can support
+
+Deployment Tools
+    Automate it, and deploy the same way to staging and production
+
+QA
+    Feature tests on unstable
+    Full tests on stage
+    Full tests on production (verification)
+    In continuous development, should mark as needed
+
+Measurement
+    Monitoring
+    Performance testing
+    Instrument, instrument, instrument
+
+Postmortems
+    What went right
+    What went wrong
+    Blameless: scapegoats only hurt you
+
+When things go wrong
+====================
+
+Quantum of deployment
+    What is the smallest number of steps, people to release
+
+Chemspills of firedrill
+    This is not a drill!
+
+Fail forward
+    Mean time to repair is more important than mean time between failures
+    It sucks to rollback, but it is better than being down
+
+Rollback
+    Going back to the last known good
+    Having a known process for rollback is just as important as deployment
+    Practice rollbacks - need to know that your procedure works
+
+Decision points
+    When shipping new define some rules and decision points
+    If it passes this test / performance, we will ship
+    If these things go wrong, we'll roll back
+    Make these rules beforehand while heads are calm
+
+Feature switches
+    A nicer alternative to rollback
+    Turn a feature on for a subset of users
+    Turn it on for everyone
+    Turn things off if you have unexpected load
+    
+Continuous deployment
+    Automated, not automatic, generally
+    Continuous integration with build-on-commit
+    Tests with good coverage
+    Single button deployment
+
+People and process
+    Good trust in organization
+    Realistic risk management
+
+Testing vs monitoring
+    Run non destructive tests against production
+
+
+
+
+
+
+
+
+
+

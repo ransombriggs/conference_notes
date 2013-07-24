@@ -1,0 +1,80 @@
+Licenses
+========
+
+choosealicense.com
+
+Jeff Hawkins
+============
+
+Build systems based on the operating principals of the neocortex
+
+Cortical Learning Algorithm
+    Building patterns from your senses and generates your behavior
+    Four layers of cells, two layers of feed forward pattern recognition and another for feedback
+    Each layer is sequence memory and builds semantic model from streaming data
+
+Numenta Platform for Intelligent Computing
+
+Jay Parikh
+==========
+
+Open Compute Project
+
+38% more energy efficient with 24% lower cost
+
+OCP Networking Project
+
+250 billion uploaded photos with more than 350 million a day 7PB a month
+
+82% of the traffic is focused on 8% of the photos
+
+1 exabyte per room powered by 1.5 megawatts with no power redundancy
+
+Cold flash - basically write once with a lot of random reads and low power
+
+Mark Hinkle
+===========
+
+How do we include more people in our communities?
+
+Open source is not a zero sum game, everyone benefits from shared development
+
+How many people benefit from collaborative linux kernel development?
+    People may use fedora, redhat, but everyone benefits
+
+If a new user has a problem it is a bug in the code or documentation.
+
+Todd Greene
+===========
+
+Linux is one platform with six interpretations
+
+How do you make everyone talk together?
+
+Sharren Bates
+=============
+
+How are my students doing?  And what should we do next to help them succeed?
+
+Integration of various student applications into one
+
+inBloom
+
+Mark Shuttleworth
+=================
+
+Redefining what is possible with the Ubuntu edge
+
+Quest for total automation - cloud computer should allow us to try and fail faster
+
+Juju - distilling how things connect (called charms)
+    https://juju.ubuntu.com/
+
+dev - test - run => continuous deployment distilled
+
+
+
+
+
+
+

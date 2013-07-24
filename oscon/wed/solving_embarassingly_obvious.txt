@@ -1,0 +1,45 @@
+Two watchmakers Jim and Joe
+===========================
+
+Jim succeeds and Joe fails - watches consists of about a 1000 parts
+
+Joe - put all parts together in one assembly
+
+Jim - break into subassembly
+
+Our methadology
+===============
+
+1. Get something to work
+2. What is going on here
+3. If something isn't obvious, make it obvious
+
+Break out super nested stuff, move the interesting stuff from lower right to upper left
+
+Benefits
+========
+
+Obviousness - rubber ducking - could you please explain that to the rubber duck
+    When pair programming, your pair can often serve as your duck
+
+Separation of concerns
+    Can only hold so many things in your head (like remembering 12 numbers)
+
+I like to avoid documentation (outside of external API) 
+
+Limited surface are for bugs
+
+Improved testability
+    Does not like testability as a goal in itself
+
+Framework for reasoning about change
+
+Objections
+==========
+
+Too many functions - abstraction explosion
+
+Poor logical grouping
+
+Pointless text shuffling
+

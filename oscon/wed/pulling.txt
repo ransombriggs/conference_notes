@@ -1,0 +1,59 @@
+First we had HTTP, and it was good, but just for documents
+
+page-by-page model - someone asks for something, we go get it
+
+AJAX - ask in the background and only change the relevant bits
+
+We need it for collaboration, like chat, comments, bidding, monitoring, sports, games
+
+Bi-directional, asynchronous, near real time, server initiated
+
+Java Applets
+    Let it go ...
+
+Polling
+    are we there yet technique
+    very chatty / high traffic
+    self inflict ddos
+
+iFrame Streaming
+    first embed and invisible iframe
+    must use a server that supports streaming
+    sends a self executing java payload
+    spins the throbber which confuses users
+
+XHR streaming
+    on the client side you poll the stream
+    remember what you looked at before, throw the change
+    problem is that you have to dump old stuff eventually
+
+Long polling
+    the response is blocked until something is available
+    problem is if your block is too long, you are wasting space
+    you should use asynchronous operation in long polling server
+
+Flash
+    Go away flash!
+
+Push frameworks
+===============
+
+Comet - no longer just long pulling, will degrade down depending on capabilities
+
+Provides both client and server side components
+
+Many use a pub-sub protocol called Bayeaux
+
+Faye 
+
+Web Sockets
+    dedicated socket in the client
+    fast and reliable and things like auto reconnect
+    implement onopen, onmessage, onclose
+
+Server sent events
+    only sent from server to client over udp
+
+BOSH
+WebRTC
+

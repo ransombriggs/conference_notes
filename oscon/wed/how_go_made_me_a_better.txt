@@ -1,0 +1,150 @@
+package main
+
+import (
+    "io"
+    "log"
+    "net/http"
+    "os"
+)
+
+func main() {
+    if len(os.Args) < 2 {
+        log.Fatal ("usage")
+    }
+    resp, err := http.Get(os.Args[1])
+    if err != nil {
+        log.Fatal
+    }
+    defer resp.Body.Close() // will execute when function exits
+    io.Copy(os.Stdout, resp.Body)
+}
+
+Readability
+===========
+
+like pseudocode with braces
+
+type inference
+
+error on unused variable or import
+
+go fmt file // reformat to proper layout
+
+refactoring with go fmt -r arguments
+
+Go Error Handling
+=================
+
+return value
+
+forces you to do local handling
+
+panic only when something is really broken
+
+func curl(url, string) (string, error) {
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Printf("failed")
+        return "", err
+    }
+    defer resp.Body.Close()
+    data, _ := ioutil.ReadAll(resp.Body) // _ because unused variables are errors
+    return string(data), nil
+}
+
+Now he is more careful and traps more locally.  One downside in other languages that it is hard to determine what types of exceptions a method can throw.
+
+Rich standard library
+=====================
+
+XML and JSON parsing in Go
+
+based on annotation and are typesafe with same api
+
+var feedXml = []byte('<rss version="2.0"></rss>')
+
+type Feed struct
+    Version string, 'xml:"version.attr"'
+    Channel struct {
+
+    } 'xml:channel'
+}
+
+Go packaging and distribution
+=============================
+go get github.com/gorilla/rpc
+
+import "github.com/gorilla/rpc"
+
+go install
+
+Go concurrency
+==============
+included in the runtime
+
+communicate with each other rather than locking 
+
+goroutines 
+==========
+
+ch := make(chan *http.Response)
+for _, u := range urls
+  go func(url string) {
+    // actually download stuff
+  }
+}
+
+Go interfaces
+=============
+
+Bag of methods
+
+Implicit
+
+Composable
+
+Code first, generalize later
+
+type Stringer interface {
+    String() string
+}
+
+type Foo struct {
+    func (f *Foo) String() {}
+}
+
+---
+
+type Reader interface {
+    Read()
+}
+
+type Write interface {
+    Write()
+}
+
+type ReaderWriter interface {
+
+}
+    
+Go composition
+==============
+
+type Foo struct {
+    sync.Mutex
+}
+
+type Locker interface {
+
+}
+
+---
+
+type loggingConn struct {
+    net.Conn
+}
+
+func (c *loggingConn) Read(b[] bytes) (int, error) {
+    n, error
+}
+

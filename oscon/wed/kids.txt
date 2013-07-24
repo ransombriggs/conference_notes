@@ -1,0 +1,35 @@
+Tools
+=====
+
+DrTechniko (drtechniko.com)
+
+Scratch (scratch.mit.edu)
+
+Alice (alice.org)
+
+Greenfoot (greenfoot.org)
+
+BlueJ (bluej.org)
+
+Mindstorms (mindstorms.lego.com)
+    Educational kit has been developed with MIT
+
+Sagan (sagan.be)
+
+Arduino (arduino.cc)
+
+Raspberry Pi (raspberrypi.org)
+
+Events
+======
+
+devoxx4kids (devox4kids.com)
+
+first lego league (firstlegoleague.org)
+
+Maker Faire (makerfaire.com)
+
+
+
+
+

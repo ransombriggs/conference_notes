@@ -1,0 +1,67 @@
+Requirement - someone somewhere wants something to happen
+
+As a user, I should be able to interpolate AsciiDoc documents
+
+The Model
+    handler chain => interpolate handler => asciidoc handler => asciidoc handler chain
+
+Unit Coverage: 100%
+
+But can a user *actually* interpolate asciidoc documents?
+
+Arquillian => middleware for your tests
+    flexible, there are a lot of technologies that can be integrated
+    extensible
+        test extension SPI for test runners
+        container extension for servers
+        container + test extension
+
+Basic test
+
+public class MyTestClass {
+
+    @Deployment
+    public static Archive<?> createDeployment() {
+        return ShrinkWrap.create(WebArchive.class).addXYZ();
+    }
+
+    @Inject
+    private MyBean bean;
+
+}
+
+How does this all work?
+
+The test is container agnostic.  In order to wire it, configure a profile in maven.
+
+When the test is run
+    start or connect to a container
+    package test archive and deploy to container
+    run test in container
+    undeploy test archive and stop server
+
+ShrinkWrap
+    Creates the java archives
+
+Maven resolver
+    Pulls the requirements from maven
+
+Testing a remote webpage but you want to inject behavior
+
+@ArquillianResource - injects where it is deployed
+@Drone - injects using the drone intermediary
+
+Thucydides - adds reporting on top of arquillian
+
+@Story(BeerAdvisor.Search.class)
+@Steps
+
+
+
+
+
+
+
+
+
+
