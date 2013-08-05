@@ -72,8 +72,10 @@ Juju - distilling how things connect (called charms)
 
 dev - test - run => continuous deployment distilled
 
+Robot Keynote
+=============
 
-
+http://ardrone2.parrot.com/
 
 
 
