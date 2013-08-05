@@ -1,0 +1,51 @@
+Where to look for performance improvement moving forward?
+
+Coarse grained parallelism with thread pools
+
+Concurrency - at least two threads are making progress
+
+Parallelism - two threads are executing simulatenously
+
+Concurrency approaches - message passing and software transactional memory
+
+Fine grained parallelism - focus on tasks rather than threading
+
+Any CPU intensive operation is a good fit, like sorts, searching, filtering, aggregation
+
+Amdahls Law - speedup is determined by percentage of work that can be parallelized
+
+Divide and conquer - recursively break down into subproblems and combine solutions
+
+Fork join framework included in JDK7
+
+solve(problem) {
+    if (problem.size < threshold) {
+        solveSequentially(problem)
+    } else {
+        
+    }
+}
+
+ForkJoinPool - executor service for running fork-join tasks
+
+ForkJoinTasks - RecursiveAction & RecursiveTask
+
+@Override
+protected void compute() {
+    // solve or split again
+}
+
+Each worker has a double ended work queue with stealing
+
+ParallelArray - aggregate array operations like map and filter
+    Uses a more functional style
+
+JDK8 - Arrays.parallelSort
+
+Bulk data operations for Collections
+
+Lambda expressions with closures
+
+Fork Join and Map Reduce are very similar
+    if data size can fit in memory, use fork join
+    

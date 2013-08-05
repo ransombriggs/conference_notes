@@ -1,0 +1,63 @@
+Paul Fenwick
+============
+
+How do we encourage people to become better open source citizens
+
+Motivation - internal (what I enjoy, drives) vs external (money)
+
+Status - in open source people work towards recognition - how I feel + external validation
+
+External motiviations have an upkeep cost
+
+Give children toys and have them rank them.  Forbid the second favorite toy.
+    I would be somewhat annoyed vs I would be angry and take away all of them
+    Then leave for ten minutes and none of them actually played
+    Have them rerank
+        Strong threat - toy is more attractive
+        Weak threat - toy is less attractive
+    Cognative dissonance
+        I wouldn't have enjoyed it anyway - changed thoughts to match world
+
+Real world in Korean War
+    Prisoner of war camp with essay writing competitions
+    Gives out small awards for winner and people started changing their mind
+
+Perl grants where people write for awards
+    People write an essay for the grant, upon reception people really want to succeed
+    How can we bring in fresh blood?
+        Can we put this massive "drive safely" sign in your yard?  16.7% people agreed
+        We are handing out these bumper stickers "be a safe driver"
+            If they take those bumper stickers they think of themselves as safe drivers
+            Compliance goes up to 76%
+        Changes peoples perceptions of themselves
+            Foot in the door technique, as simple as a sticker
+        This is the reason entry level tasks are so important
+        Reinforce their contributions like crazy
+            Binds their fate to yours, they are now part of the project and care about the fate
+    Text communication lacks empathy
+        Biggest threat: other humans so you need to percept hostility quickly
+        We will see hostility when it is only neutral intent
+        Poor relationship - now everything is hostile
+        Assume good intent, if possible assume at least neutral
+    People like familiarity - homogeneity inertia
+        People tend to self select themselves into groups like me
+        Outreach and role models are important
+
+Dopamine
+    Will X make me happy?
+    Will I regret this later on?
+    In the short term we regret the things we do
+
+Things that smart people regret
+    Pretty balanced in terms or regret of things done vs not done
+        Exceptions
+            Did not pursue hobby 14%
+            Wasted too much time on hobby?  0%
+
+If you want to do something
+    tweet publicly about it - you will invest yourself
+    and stastically speaking you probably won't regret it
+        
+    
+
+

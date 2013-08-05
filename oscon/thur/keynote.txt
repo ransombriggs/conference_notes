@@ -1,0 +1,71 @@
+Code 2040
+=========
+
+Rise of the innovation economy led by software development
+
+A massive demographic shift led by minority population
+
+The proportion of minority tech employees does not reflect this population change
+
+Michal Migurski
+===============
+
+Code for America - Oakland answers
+
+Tom Preston Werner
+==================
+
+Start with Freedom
+
+Work from first principles, what you know to be true.
+
+Stark principle - believes in honor too hard
+
+How to choose a license (choosealicense.org)
+
+Public domain - not a lot of legal precedence to give up my rights
+
+WTFPL - but does not have a limitation of liability clause
+
+Beer license - buy me a beer next time hard to enforce
+
+MIT license - gives maximum amount of freedom without suffering from stark principle
+
+Without giving something a license, people cannot use it, licensing empowers freedom
+
+How to build a company
+
+Business minimalism - only add process when it improves something
+    Github is a highly networked company
+
+Open allocation - projects compete for engineers and the result is better projects
+
+Closed allocation - engineers compete for projects and the result is worse engineers
+
+Start with freedom and finish with happiness
+
+Eileen Evans
+============
+
+Components needed for vibrant community
+    Great technology
+    Governance
+    Open source license
+
+Two buckets - copyleft (have to give back) and permissive (do not have to)
+
+Did not believe that a permissive license could build a vibrant community
+    Most vibrant communities were copyleft communities
+    Vendors engage more to communities with permissive licenses
+
+Leigh Heyman
+============
+
+We the people - directly petition the white house
+
+All systems being built must be open and machine readable
+
+petitions.whitehouse.gov/developers
+
+Adding write api so users do not have to leave your advocacy site
+

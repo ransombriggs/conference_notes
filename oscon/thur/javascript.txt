@@ -1,0 +1,86 @@
+linters - it is about ensuring your code is in your style
+
+new rule: stop thinking JS doesn't have types
+    there are 7 well defined types
+        null, undefined, boolean, string, number, object, function
+        typeof(null) => object # oops
+
+stop thinking that JS variables have types, the value has the type
+    values have types and they cannot change, but variables can hold any type
+
+stop hating on == and implicit conversion
+    think of == as allowing coercion
+    === I am not okay with coercion
+
+never treat null and undefined differently
+    null == undefined // only to each other and nothing else
+
+for some reason the coerced is faster, look into later, curious
+    http://jsperf.com/implicit-coercion-with-null-and-undefined
+
+stop writing anonymous functions
+    name the function when defining, and it is scoped well
+
+(function IIFE() {
+    function response(text) {
+        if (foo) {
+            handler();
+        } else {
+            request();
+        }
+    }
+
+    function handler() {
+
+    }
+
+    function request() {
+
+    }
+}
+
+Watch out for bloating closures, each anonymous will hold a reference
+
+Manually hoisting is gross, but so is having vars everywhere
+    use let statement to block scope code, but it will not get in
+
+Stop using this until you really understand how it gets assigned
+    this.self = this; // THIS!
+    this.method.call(this)
+
+4 rules of how this gets bound
+
+What happens at the call site
+
+function something() {
+    this.hello = "hello";
+}
+
+something() // this is global object
+foo.something() // this is foo
+foo.something.call(bar) // this is bar
+
+foobar = something.bind(bar)
+foobar() // bar
+foobar.call(
+
+is the call site new invoked use that
+is the call site binding overridden
+is the call site on an owned object
+global
+
+var self = this;
+function() {
+    self.foo
+}
+
+function() {
+    this.foo
+}.bind(this)
+
+Stop using new constructors to instatiate and inherit classes
+    OLOO => objects linked to other objects
+    class oriented vs delegation
+
+
+

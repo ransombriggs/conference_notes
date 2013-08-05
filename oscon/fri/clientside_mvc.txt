@@ -1,0 +1,61 @@
+What is clientside mvce
+    separation of concerns
+    maintainability
+    MVC, MVVM, MV* / MV-whatever
+
+Differences between serverside mvc
+    Serverside
+        The browser does very little processing if any
+        Tied to the request response cycle
+    Browserside
+        The server no longer has to do all the work
+        Can scale by moving some computation to browser
+        Server only has to produce the data via JSON
+        Asynchronous UI makes it less chatty
+
+Responsiveness and user experience
+    It will look and behave like a desktop application
+        The communication can happen when the developer wnat it to
+    Server side code can be reduced to just APIs
+
+So, what is the catch?
+    Browser compatibility
+        These things just don't work in IE6
+        Even with modern browsers there are problems
+    Large datasets
+        Browsers limit memory to scripts
+        Localstorage differs in capability / capacity / speed
+        APIs have to often implement paging, partial retrieval, etc
+    The SEO problem
+        How can web crawlers index a client side app?
+        graceful degredation increases archicture and complexity
+    Developer resistence
+        People still do not trust the browser
+
+Bigcommerce
+    shopping cart software as a service
+
+Migration plans
+    start slow, test for response, and uptake as we go
+    introduce clientside views and controls one at a time
+
+Operation Slick
+    An onboarding wizard to get people set up quickly
+
+Ember - very cool templating and data binding, but uses a runloop
+
+Backbone - fast and simple, but requires boilerplate - more of a library than framework
+
+Angular JS - very quick and nice bindings, but extended HTML in strange ways
+
+Coffeescript because mvc makes a little more sense with an mvc environment
+
+Mozart
+    pub / sub event system at the object level
+    http://www.mozart.io/
+
+
+
+
+
+

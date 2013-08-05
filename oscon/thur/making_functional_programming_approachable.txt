@@ -1,0 +1,33 @@
+The obstacles
+=============
+
+Language Minimalism
+
+The Infrastructure and Integration Problems
+
+Cultural Differences
+
+Divide between corporate and academic
+
+Entanglement in Languages that support all things
+
+Welcoming
+=========
+
+Teaching with books
+
+Learning at events
+
+An abundance of online resources
+
+Teaching recursion at a young age and threads are the devil
+
+Start with newcomers rather than treating it as advanced
+
+Etudes for erlang / elixir and meetups
+
+Designing for the language to be approachable
+    Scala is kind of a halfway house
+    Elixir rebuilds Erlang
+    ClojureScript for the web
+

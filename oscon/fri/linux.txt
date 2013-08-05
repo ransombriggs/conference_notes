@@ -1,0 +1,47 @@
+The linux way and how it is the same / different than the unix way
+
+What is the unix way?
+    Keep it simple - like how device drivers are just files
+        If you can keep the implementation of something simples at cost of interface, so be it
+    Write programs that do one thing and do it well and can work together
+        ls did not always sort, that was sort programs job
+    Ported apps to linux tend to lose the composability
+    Choose portability over efficiency
+    Store data in flat text files
+    Use software leverage to your advantage
+    Use shell scripts to increase leverage and portability
+        Because shell scripts are tied to unix not implementation
+    The user knows what they are doing
+    Separate policy from mechanism and interface from engines
+        An engine is any code that you only want to write once
+        Allow different interfaces to talk to same engine code
+    Linux future http://www.pappp.net/?p=969
+
+Modern linux vs unix
+    Avoids scripts in favor of descriptive configuration files
+    Ease of machine manipulability over human manipulabiltiy
+        There is less sharing between services now because we have machines per service
+        We want things to be more automated with things like puppet
+    D-Bus rather than sockets and pipes
+        A higher level than sockets and pipes
+    Monolithic programs which attempt to synergistically manage multiple complex components
+        systemd versus inetd
+    Leverage features specific to linux - is portability a concern anymore?
+        New windowing systems are using linux specific features vs X which is portable
+    Perfer tightly integrated components to generic solutions
+    Ignore long standing conventions if needed, like filesystem conventions
+    Anti-Unix or an evolution?
+
+Manipulexity versus Whipupitude
+    whippen something up (doing not crazy complicated)
+
+"I realized at that point that there was a huge ecological niche between the C language and Unix shells. C was good for manipulating complex things  - you can call it 'manipulexity.' And the shells were good at whipping up things - what I call 'whipupitude.' But there was this big blank area where neither C nor shell were good, and that's where I aimed Perl." 
+ -- Larry Wall, author of Perl
+
+Now we worry about porting between versions of linux instead of versions of unix
+
+There is another level of indirection in linux, the distribution.
+    Competition for users and contributors operates not just at package, but distro
+    Take the decisions the distro peeps can make and choose yours, then pick matching distro
+
+

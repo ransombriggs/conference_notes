@@ -1,0 +1,115 @@
+Cryptography pitfalls
+=====================
+
+Keeping a secret, and verification, and identification
+
+We are betting that we will not have giant leaps in math of computing (RSA)
+
+Don't design your own cyptography and don't implement your own cryptography without review
+
+Stick to government standards NIST has a recommended list of algorithms
+
+The only thing that should be secret in your crypto system is your key
+
+Each primitive itself is very strong, where we combine use them is problematic
+
+Recommendations
+===============
+
+For data moving accross a network, use SSL, SSH, VPN
+
+For data at rest - use GnuPG
+
+Use a high level library
+    Keyczar (Python, Java)
+    NaCL (C, Ruby, etc)
+
+Pitfalls
+========
+
+Random number generation - used to generate encryption keys, reset tokens, session tokens
+
+Use the cypto library RNG - OpenSSL random
+
+On linux /dev/random - blocks for entropy /dev/urandom - non blocking
+
+Length extension attacks - think of hashes as fingerprints
+    Use SHA-256 - do not use MD5 - do not use SHA1 in new projects
+
+MD5, SHA - merble damngaurd - give internal state of the algorhtm at completion
+
+Take the input one block at a time, and update internal variables, then return variables
+
+What happens if we add to the end of it?  I have the internal state of the shorter version, so start with internal state, add on the blocks and continue algorithm now we have a valid hash without having to know the secret
+
+Do not do message integrity with hash functions - use HMAC-SHA-256 for auth
+
+ECB Mode - does not hide patterns - however it is often the default
+
+Cipher block chain - rather than just running through aes, rather than just running blocks through 16 bytes at a time, bootstrapping with a random iv and then using previous
+
+Use AES
+    Do not use DES
+    Do not use ECB mode
+
+Use an authenticated encryption mode
+    GCM, CCM, CB
+    CBC wit hand HMAC of IV and ciphertext
+    Verify that in transit no one has messed with it
+
+Password storage - password leaks happen
+    In almost all cases they were doing something like sha1(password)
+        Only one desireable property it is one-way and is only useful for verification
+    Next step up is sha1(salt + password)
+        Defeats pre-computed databases but is too fast
+
+We need slow hashing
+    bcrypt, scrypt and pbkdf2
+    Will slow down the hashing to a speicified work value
+    He recommends half a second because user will not notice
+        Hacker will most definitly notice
+
+Delegate authentication if possible
+
+Store one way verifier using bcrypt, scyrypt
+
+TLS / SSL verification
+    It is the burden of the client to verify the server is who it is
+    The Most Dangerous Code in the World paper
+    The problem is insecure defaults in libraries and languages
+
+Goal is to find the trusted root up the certificate chain
+
+Check your ssl connections
+    verify certificate
+    verify host
+    set up an automated test
+
+Trust
+    SSH remote identification
+    All the trusted CAs that ship with mozilla
+
+Certificate Pinning
+    you can scope the trusted certificate authority - or just this cert
+
+Stanford crypto class from coursera
+
+Matasano crypto challenges
+
+Pragmatic Cryptography
+    pragmaticcrypto.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+nodejs is built around events
+
+the event loop is always running checking for new events and firing callbacks
+
+node has a lot of events, like when connections are opened
+    http://nodejs.org/api/http.html
+
+prefer custom events to callbacks
+
+write your own custom events using eventemitter
+    http://nodejs.org/api/events.html
+
+require is basically an import
+
+We declare public methods by putting them in exports
+
+exports.foobar = function
+    http://nodejs.org/api/modules.html
+
+nodemon - nodejs reloading
+
+npm - installs packages to node_modules
+
+package.json - https://npmjs.org/doc/json.html
+
+express.js - sinatra style frameowork for REST API
+    Jade, EDS, Dist, Handlebars template engines
+
+

@@ -1,0 +1,30 @@
+Password requirements are really unkind
+
+We need to start getting out of the password business
+
+Account chooser or email => idp web service
+
+OAuth2 and OpenID
+
+Access Token
+    Opaque, short lived, scoped
+    Must be used over HTTPS
+
+Access token is much like a hotel room keycard
+
+A Refresh Token
+    doesn't expire until revoked
+    should be kept in secure storage
+
+OpenID connect token
+    cryptographically signed by an issuer
+
+Cross client identity (https://developers.google.com/accounts/docs/CrossClientAuth)
+    web + ios + android
+
+Greatest weakness of outh is that it assumes there is a browser
+
+Get out of the password business
+
+Use libraries when possible
+

@@ -1,0 +1,73 @@
+John Graham Cumming
+===================
+
+The mother of all demos (1968)
+
+What is new since the mother of all demos?
+
+Cloud computing?  (1966) The challenge of the computing utility
+
+Big data (1955) distance between all railway stations in england
+
+Virtual machines (1967) IBM
+
+Hypertext (1945) with clickable links (1967)
+
+Markup langauges (1960s GML => SGML => HTML)
+
+Fibre optic networking (1966)
+
+Wifi (1971) Alohanet
+
+Ethernet (1973)
+
+Solid state disks (1976)
+
+Processor architecture (go read about cray and ibm 360)
+
+High water mark is roughly 1983, nothing interesting after return of the jedi
+
+Implications
+------------
+
+Entire foundation for patents is sand 
+
+We think we are inventing things, but the work has been done before
+    There is great value in computer science education, you can learn most of it
+
+Now the software is available as well as the ideas thanks to open source
+
+We have to conquer unreliability - hardware and software
+
+Which programming language to do you prefer?  Knuth: which has a better debugger
+
+Turing's curse - 1936 explained the halting problem
+
+Help programmers make fewer mistakes and help programmers find their mistakes
+
+Ada Lovelace: Imagine my horrer when I was off by one or two points
+
+Robert Lefkowitz
+================
+
+Why is distinction important and how do you get it?
+
+Aristotle On Rhetoric
+    making a logical argument is the least effective
+    most is rhetoric and an appeal to authority
+
+Do stuff, people will see it and be like hey, he's done stuff
+
+How many open source members have been honored as ACM distinguished members?
+    Guido van rossen
+
+Lets participate and join professional organizations and nominate each other
+    We need to join the greater group and let our work known
+
+Piers Cawley
+============
+
+
+
+
+
